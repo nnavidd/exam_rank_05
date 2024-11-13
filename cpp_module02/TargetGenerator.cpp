@@ -33,7 +33,6 @@ TargetGenerator & TargetGenerator::operator=( TargetGenerator const & other) {
 void TargetGenerator::learnTargetType(ATarget* newTarget) {
 	if (_targets.find(newTarget->getType()) == _targets.end())
 		_targets[newTarget->getType()] = newTarget->clone();
-		// _targets[newTarget->getType()] = newTarget;
 }
 
 void TargetGenerator::forgetTargetType(std::string const & targetName) {

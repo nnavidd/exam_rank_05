@@ -3,9 +3,7 @@
 
 Fwoosh::Fwoosh() : ASpell("Fwoosh", "fwooshed") {}
 
-Fwoosh::~Fwoosh() {
-	 std::cout << "Fwoosh destructor called" << std::endl;
-}
+Fwoosh::~Fwoosh() {}
 
 ASpell * Fwoosh::clone() const {
 	return new Fwoosh(*this);
