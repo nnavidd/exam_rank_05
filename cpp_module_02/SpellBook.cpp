@@ -8,6 +8,7 @@ SpellBook::~SpellBook() {
 			delete it->second;
 	}
 	_spells.clear();
+	std::cout << "----------------->this is inside the deconstructor of SpellBook" << std::endl;
 }
 
 void	SpellBook::spellsCopy(std::map<std::string, ASpell *> const & other) {
@@ -31,7 +32,7 @@ SpellBook & SpellBook::operator=( SpellBook const & other) {
 
 
 void SpellBook::learnSpell(ASpell* newSpell) {
-	if (_spells.find(newSpell->getName()) == _spells.end())
+	if (newSpell && _spells.find(newSpell->getName()) == _spells.end())
 		_spells[newSpell->getName()] = newSpell->clone();
 }
 

@@ -47,6 +47,11 @@ void Warlock::forgetSpell( std::string const & spellName) {
 }
 
 void Warlock::launchSpell( std::string const & spellName, ATarget const & tar ) {
-	if (_spells.createSpell(spellName))
-		_spells.createSpell(spellName)->launch(tar);
+	ASpell *sample = _spells.createSpell(spellName);
+	if (sample) {
+		sample->launch(tar);
+		delete sample;
+	}
+	// if (_spells.createSpell(spellName))
+		// _spells.createSpell(spellName)->launch(tar);
 }
